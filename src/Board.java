@@ -44,4 +44,24 @@ public class Board {
         }
     }
 
+    public void printBoard() {
+        for(int i = 0; i < 8; i++) {
+            for(int j = 0; j < 8; j++) {
+                Piece piece = this.spots[i][j].getPiece();
+
+                String out = "";
+
+                if(piece == null) {
+                    out += "___";
+                }
+                else {
+                    out += piece.getPieceString();
+                }
+
+                System.out.print(out + " ");
+            }
+            System.out.println("\n");
+        }
+    }
+
 }

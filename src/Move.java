@@ -1,9 +1,21 @@
 public class Move {
 
     private Player player;
+    public Player getPlayer() {
+        return player;
+    }
+
     private Spot start;
     private Spot end;
     private Piece pieceMoved;
+    public Piece getPieceMoved() {
+        return pieceMoved;
+    }
+
+    public Piece getPieceKilled() {
+        return pieceKilled;
+    }
+
     private Piece pieceKilled;
 
     public Move(Player player, Spot start, Spot end) {

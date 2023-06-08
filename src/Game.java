@@ -1,6 +1,5 @@
 import java.util.List;
 
-
 public class Game {
     
     private Player[] players;
@@ -69,6 +68,9 @@ public class Game {
         end.setPiece(sourcePiece);
         start.setPiece(null);
 
+        Move move = new Move(currPlayer, start, end);
+        movesPlayed.add(move);
+
         if(destPiece instanceof King) {
 
             if(this.currPlayer.isWhiteSide()) {
@@ -90,23 +92,7 @@ public class Game {
     }
 
     public void printBoard() {
-        for(int i = 0; i < 8; i++) {
-            for(int j = 0; j < 8; j++) {
-                Piece piece = this.board.spots[i][j].getPiece();
-
-                String out = "";
-
-                if(piece == null) {
-                    out += "___";
-                }
-                else {
-                    out += piece.getPieceString();
-                }
-
-                System.out.print(out + " ");
-            }
-            System.out.println("\n");
-        }
+       this.board.printBoard();
     }
 
 }
