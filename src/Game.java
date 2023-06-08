@@ -48,7 +48,12 @@ public class Game {
     }
     
     public boolean playerMove(int startX, int startY, int endX, int endY) {
-        
+
+        // Can't move out of the board, kenya?
+        if(startX < 0 || startX > 7 || endX < 0 || endY > 7) {
+            return false;
+        }
+
         Spot start = board.spots[startX][startY];
         Spot end = board.spots[endX][endY];
         Piece sourcePiece = start.getPiece();
@@ -72,8 +77,6 @@ public class Game {
         if(destPiece != null) {
             destPiece.setKilled(true);
         }
-
-        
 
         end.setPiece(sourcePiece);
         start.setPiece(null);
