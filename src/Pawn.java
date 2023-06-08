@@ -10,15 +10,29 @@ public class Pawn extends Piece{
             return false;
         }
 
-        // int x = Math.abs(end.getX() - start.getX());
         int x = end.getX() - start.getX();
+        int y = Math.abs(end.getY() - start.getY());
+
+        if(y > 1) return false;
         
-        
+        // if moving diagonally, it must kill
+        // if moving straight, spot must be free
         if(this.isWhite() && x == -1) {
-            return true;
+            if(y != 0) {
+                return end.getPiece() != null && !end.getPiece().isWhite();
+            }
+            else {
+                return end.getPiece() == null;
+            }
         }
         else if(x == 1) {
-            return true;
+            if(y != 0) {
+                return end.getPiece() != null && end.getPiece().isWhite();
+            }
+            else {
+                return end.getPiece() == null;
+            }
+
         }
         
         return false;
