@@ -8,7 +8,7 @@ public class Queen extends Piece{
     @Override
     public boolean moveValid(Board board, Spot start, Spot end) {
         
-        if(end.getPiece().isWhite() == this.isWhite()) {
+        if(end.getPiece() != null && end.getPiece().isWhite() == this.isWhite()) {
             return false;
         }
 

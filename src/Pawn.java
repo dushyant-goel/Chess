@@ -11,13 +11,13 @@ public class Pawn extends Piece{
         }
 
         // int x = Math.abs(end.getX() - start.getX());
-        int y = end.getY() - start.getY();
+        int x = end.getX() - start.getX();
         
         
-        if(this.isWhite() && y == -1) {
+        if(this.isWhite() && x == -1) {
             return true;
         }
-        else if(y == 1) {
+        else if(x == 1) {
             return true;
         }
         

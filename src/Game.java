@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
@@ -5,20 +6,20 @@ public class Game {
     private Player[] players;
     private Board board;
     
-    public Board getBoard() {
-        return board;
-    }
-
-    private Player currPlayer;
     
+    private Player currPlayer;
     private GameStatus status;
     private List<Move> movesPlayed;
-    
+
     public Game() {
         this.players = new Player[2];
         this.board = new Board();
+        this.movesPlayed = new ArrayList<>();
     }
-
+    
+    public Board getBoard() {
+        return board;
+    }
     public void startGame(Player p1, Player p2) {
         players[0] = p1;
         players[1] = p2;
@@ -52,6 +53,12 @@ public class Game {
         Spot end = board.spots[endX][endY];
         Piece sourcePiece = start.getPiece();
 
+        // Gotta move a piece, not empty air
+        if(sourcePiece == null) {
+            return false;
+        }
+
+        // Player may only move their pieces
         if(!this.currPlayer.isWhiteSide() == sourcePiece.isWhite()) {
             return false;
         }
@@ -60,10 +67,13 @@ public class Game {
             return false;
         }
         
+        // If the move is valid, then the other colour's piece is killed.
         Piece destPiece = end.getPiece();
         if(destPiece != null) {
             destPiece.setKilled(true);
         }
+
+        
 
         end.setPiece(sourcePiece);
         start.setPiece(null);
