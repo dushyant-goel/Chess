@@ -1,5 +1,14 @@
 ## Chess game
 
+### Build
+```
+javac -d build src/*.java
+```
+### Run
+```
+java -cp build Main
+```
+
 **Main.java** defines the game engine loop.
 - Players take turn alternatively. - Prompt asks player to enters start and end position of the piece they want to move.
 - After each turn, the board is printed to show current state.
