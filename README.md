@@ -39,3 +39,10 @@ java -cp build Main
 
 What is index.js doing?  
 Nothing, thats for future extension.
+
+---
+
+**To Do:**
+
+Change the move notation to Algebraic Notation
+https://en.wikipedia.org/wiki/Algebraic_notation_(chess)
