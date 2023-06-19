@@ -1,5 +1,15 @@
+package board;
+
+import pieces.Bishop;
+import pieces.King;
+import pieces.Knight;
+import pieces.Pawn;
+import pieces.Piece;
+import pieces.Queen;
+import pieces.Rook;
+
 public class Board {
-    Spot[][] spots;
+    public Spot[][] spots;
 
     public Board() {
         this.startBoard();

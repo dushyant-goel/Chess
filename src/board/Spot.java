@@ -1,3 +1,6 @@
+package board;
+import pieces.Piece;
+
 public class Spot {
     private int x;
     private int y;

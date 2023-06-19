@@ -1,3 +1,6 @@
+package player;
+import person.Person;
+
 public class Player {
     
     private Person person;

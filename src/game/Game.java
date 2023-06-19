@@ -1,5 +1,14 @@
+package game;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import player.Player;
+import board.Board;
+import board.Spot;
+import move.Move;
+import pieces.Piece;
+import pieces.King;
 
 public class Game {
     

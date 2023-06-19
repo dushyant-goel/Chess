@@ -1,3 +1,8 @@
+package pieces;
+
+import board.Board;
+import board.Spot;
+
 public class Rook extends Piece{
 
     public Rook(boolean white) {

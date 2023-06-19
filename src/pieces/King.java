@@ -1,6 +1,11 @@
-public class Knight extends Piece{
+package pieces;
 
-    public Knight(boolean white) {
+import board.Board;
+import board.Spot;
+
+public class King extends Piece{
+
+    public King(boolean white) {
         super(white);
     }
 
@@ -14,7 +19,7 @@ public class Knight extends Piece{
         int x = Math.abs(end.getX() - start.getX());
         int y = Math.abs(end.getY() - start.getY());
 
-        if((x == 1 && y == 2) || (x == 2 && y == 2)) {
+        if(x < 2 && y < 2 && x+y > 0) {
             return true;
         }
 
@@ -31,7 +36,8 @@ public class Knight extends Piece{
          result += "B";
         }
  
-        return result += "Kn";
+        return result += "Ki";
     }
+    
     
 }

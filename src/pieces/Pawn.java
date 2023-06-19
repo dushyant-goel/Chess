@@ -1,3 +1,8 @@
+package pieces;
+
+import board.Board;
+import board.Spot;
+
 public class Pawn extends Piece{
 
     public Pawn(boolean white) {

@@ -1,3 +1,9 @@
+package move;
+
+import pieces.Piece;
+import player.Player;
+import board.Spot;
+
 public class Move {
 
     private Player player;

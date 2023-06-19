@@ -1,3 +1,8 @@
+package pieces;
+
+import board.Board;
+import board.Spot;
+
 public abstract class Piece {
     private boolean killed = false;
     private boolean white = false;
